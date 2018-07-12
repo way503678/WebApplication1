@@ -16,15 +16,6 @@ namespace WebApplication1.Controllers
 
         public ActionResult No1()
         {
-            String sqlString = "Select * from Students;";
-
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "data source=localhost;initial catalog=Master;User ID = johnson; Password = a0930867605";
-
-            conn.Open();
-
-            SqlDataAdapter da = new SqlDataAdapter(sqlString, conn);
-
             ViewBag.Message = "賓果小遊戲";
 
             return View();
