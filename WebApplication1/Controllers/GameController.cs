@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using System.Data.SqlClient;
+using System.Configuration;
 
 namespace WebApplication1.Controllers
 {
@@ -33,6 +34,29 @@ namespace WebApplication1.Controllers
             ViewBag.Message = "Your contact page.";
 
             return View();
+        }
+
+        public ActionResult login()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult AuthorRize(WebApplication1.Models.Menber member)
+        {
+            using (Models.masterEntities db = new Models.masterEntities()) {
+                var user = db.Menber.Where(x => x.Account == member.Account && x.passwd == member.passwd).FirstOrDefault();
+                if (user == null)
+                {
+                    
+                    member.LoginErrorMessage = user + "帳號或密碼錯誤";
+                    return View("login", member);
+                }
+                else {
+                    Session["userid"] = member.Account;
+                    return RedirectToAction("Home", "Game");
+                }
+            }
         }
     }
 }

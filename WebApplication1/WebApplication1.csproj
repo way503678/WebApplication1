@@ -160,6 +160,24 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\login.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>login.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\login.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>login.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\login.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>login.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Menber.cs">
+      <DependentUpon>login.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -171,10 +189,27 @@
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
     <Content Include="Content\Site.css" />
+    <Content Include="Models\login.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>login.edmx</DependentUpon>
+      <LastGenOutput>login.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\login.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>login.edmx</DependentUpon>
+      <LastGenOutput>login.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <EntityDeploy Include="Models\login.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>login.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\login.edmx.diagram">
+      <DependentUpon>login.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -202,10 +237,10 @@
     <Content Include="Views\Game\No2.cshtml" />
     <Content Include="Views\Game\Home.cshtml" />
     <Content Include="Views\Game\No3.cshtml" />
+    <Content Include="Views\Game\login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Models\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
