@@ -178,6 +178,24 @@
     <Compile Include="Models\Menber.cs">
       <DependentUpon>login.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Todolist.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Todolist.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\todolist.cs">
+      <DependentUpon>Todolist.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Todolist.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Todolist.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Todolist1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Todolist.tt</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +217,16 @@
       <DependentUpon>login.edmx</DependentUpon>
       <LastGenOutput>login.cs</LastGenOutput>
     </Content>
+    <Content Include="Models\Todolist.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Todolist.edmx</DependentUpon>
+      <LastGenOutput>Todolist.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Models\Todolist.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Todolist.edmx</DependentUpon>
+      <LastGenOutput>Todolist1.cs</LastGenOutput>
+    </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="ApplicationInsights.config">
@@ -210,6 +238,13 @@
     </EntityDeploy>
     <Content Include="Models\login.edmx.diagram">
       <DependentUpon>login.edmx</DependentUpon>
+    </Content>
+    <EntityDeploy Include="Models\Todolist.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Todolist.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\Todolist.edmx.diagram">
+      <DependentUpon>Todolist.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />

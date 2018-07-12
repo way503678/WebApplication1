@@ -24,7 +24,16 @@
                     <li>@Html.ActionLink("賓果遊戲", "No1", "Game")</li>
                     <li>@Html.ActionLink("第二個遊戲", "No2", "Game")</li>
                     <li>@Html.ActionLink("第三個遊戲", "No3", "Game")</li>
-                    <li>@Html.ActionLink("登入", "login", "Game")</li>
+                    @{ if (Session["userid"] != null)
+                        {
+                            <li>Hello，您好 @Session["userid"]</li>
+                        }
+                        else
+                        {
+                            <li>@Html.ActionLink("登入", "login", "Game")</li>
+                        }
+                    }
+
                 </ul>
             </div>
         </div>
