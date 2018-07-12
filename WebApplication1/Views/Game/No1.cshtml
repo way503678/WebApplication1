@@ -1,0 +1,68 @@
+﻿@{
+    ViewBag.Title = "第一個遊戲";
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+<input id="number" type="text" placeholder="請輸入數字">
+<button onclick="addcell()">確定</button><br/><br/>
+<table>
+<tr>
+    <td width="1000px" height="500px"><ul id="parent"></ul></td>
+    <td width="1000px" height="500px"><table id="bingo" width="300" height="300" border="1"></table></td>
+</tr>
+</table>
+
+
+
+<script>
+    var count = 1;
+    var numarray = [];    
+    var bingo = document.getElementById("bingo");
+    var i, j;
+    var numlist = [];
+    for (j = 0; j < 4; j++) {        
+        var row = bingo.insertRow(j);
+        row.setAttribute("id", "row" + j);
+        i = 0;
+        while (i < 4) {       
+            mathrandom = Math.floor((Math.random() * 16) + 1);
+            if (numlist.includes(mathrandom) != true) {
+                var cell = row.insertCell(i);
+                cell.setAttribute("id", "cell" + mathrandom);
+                cell.setAttribute("align", "center");
+                cell.setAttribute("style", "width:100px;font-size:0.8cm");
+                cell.innerHTML = mathrandom;
+                numlist.push(mathrandom);
+                i += 1;
+            } else {
+                continue;
+            }
+            
+        }
+    }
+   
+
+
+    function addcell() {
+        var num = document.getElementById("number");
+        
+        var parent = document.getElementById("parent");
+        var cellnumber = document.getElementById("cell" + num.value);
+        var isExist = numarray.includes(num.value);        
+        if (isExist == false) {            
+            var li = document.createElement("li");
+            li.setAttribute("style", "font-size:20px")
+            li.innerHTML = "第 " + count + " 次選擇的數字 : " + num.value;
+            parent.appendChild(li);
+            cellnumber.setAttribute("style", "background-color:#43ccca;font-size:0.8cm");
+            count += 1;
+            numarray.push(num.value);            
+        } else {
+            alert("數字 " + num.value + " 已經有人說過了哦! ");
+        }
+        num.value = "";
+        
+        
+        
+    }
+</script>
