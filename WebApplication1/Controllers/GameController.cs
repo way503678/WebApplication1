@@ -26,7 +26,7 @@ namespace WebApplication1.Controllers
             SqlDataAdapter da = new SqlDataAdapter(sqlString, conn);
 
             ViewBag.Message = "賓果小遊戲";
-
+            conn.Close();
             return View();
         }
 
