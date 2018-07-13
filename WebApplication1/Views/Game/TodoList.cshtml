@@ -1,0 +1,50 @@
+﻿@model WebApplication1.Models.todolist
+@{
+    
+    ViewBag.Title = "代辦事項";
+    if (Session["userid"] == null)
+    {
+        Response.Redirect("~/Game/login");
+    }
+}
+<h2>@ViewBag.Title</h2>
+<h3>@ViewBag.Message</h3>
+
+
+<div>
+    
+    <table border="1">
+        <tr>
+            <td width="150" align="center">代辦事項</td>
+            <td width="150" align="center">完成狀態</td>
+            <td width="150" align="center">刪除</td>
+        </tr>
+        @{  
+            foreach (var list1 in ViewBag.todolist)
+            {
+        <tr>
+            <td>@list1.staff</td>
+            @{@list1.statu
+            if (@list1.statu == "0 ")
+            {
+                <td>未完成</td>
+            }
+            else
+            {
+                <td>已完成</td>
+            }
+            }
+
+            <td>@list1.statu</td>
+        </tr>
+
+            }
+        }
+
+
+
+
+    </table>
+
+
+</div>

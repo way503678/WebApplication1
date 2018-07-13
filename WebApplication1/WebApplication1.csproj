@@ -178,23 +178,23 @@
     <Compile Include="Models\Menber.cs">
       <DependentUpon>login.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Todolist.Context.cs">
+    <Compile Include="Models\todolist.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Todolist.Context.tt</DependentUpon>
+      <DependentUpon>todolist.Context.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\todolist.cs">
-      <DependentUpon>Todolist.tt</DependentUpon>
+      <DependentUpon>todolist.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Todolist.Designer.cs">
+    <Compile Include="Models\todolist.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Todolist.edmx</DependentUpon>
+      <DependentUpon>todolist.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Models\Todolist1.cs">
+    <Compile Include="Models\todolist1.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Todolist.tt</DependentUpon>
+      <DependentUpon>todolist.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -217,15 +217,15 @@
       <DependentUpon>login.edmx</DependentUpon>
       <LastGenOutput>login.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Todolist.Context.tt">
+    <Content Include="Models\todolist.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Todolist.edmx</DependentUpon>
-      <LastGenOutput>Todolist.Context.cs</LastGenOutput>
+      <DependentUpon>todolist.edmx</DependentUpon>
+      <LastGenOutput>todolist.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Models\Todolist.tt">
+    <Content Include="Models\todolist.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Todolist.edmx</DependentUpon>
-      <LastGenOutput>Todolist1.cs</LastGenOutput>
+      <DependentUpon>todolist.edmx</DependentUpon>
+      <LastGenOutput>todolist1.cs</LastGenOutput>
     </Content>
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
@@ -239,12 +239,12 @@
     <Content Include="Models\login.edmx.diagram">
       <DependentUpon>login.edmx</DependentUpon>
     </Content>
-    <EntityDeploy Include="Models\Todolist.edmx">
+    <EntityDeploy Include="Models\todolist.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Todolist.Designer.cs</LastGenOutput>
+      <LastGenOutput>todolist.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Models\Todolist.edmx.diagram">
-      <DependentUpon>Todolist.edmx</DependentUpon>
+    <Content Include="Models\todolist.edmx.diagram">
+      <DependentUpon>todolist.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -257,7 +257,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -273,6 +275,7 @@
     <Content Include="Views\Game\Home.cshtml" />
     <Content Include="Views\Game\No3.cshtml" />
     <Content Include="Views\Game\login.cshtml" />
+    <Content Include="Views\Game\TodoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

@@ -58,5 +58,20 @@ namespace WebApplication1.Controllers
                 }
             }
         }
+
+        public ActionResult TodoList(WebApplication1.Models.todolist todolist)
+        {
+            using (Models.masterEntities1 db = new Models.masterEntities1()) {
+                //List<dolist> todolist1 = new List<dolist>;
+                //var list = db.todolist.Where(x => x.staff == "123");
+                var dolist = db.todolist.SqlQuery("select * from todolist where userid = '123'" ).ToList();                
+                ViewBag.todolist = dolist;
+                ViewBag.count = dolist.Count();
+                return View();
+                
+                
+            }
+               
+        }
     }
 }

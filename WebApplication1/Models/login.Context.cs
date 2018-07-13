@@ -26,5 +26,6 @@ namespace WebApplication1.Models
         }
     
         public virtual DbSet<Menber> Menber { get; set; }
+        public virtual DbSet<todolist> todolist { get; set; }
     }
 }

@@ -31,7 +31,7 @@
           <Property Name="staff" Type="String" MaxLength="150" FixedLength="true" Unicode="false" />
           <Property Name="statu" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="masterEntities1" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="todolist" EntityType="Self.todolist" />
         </EntityContainer>
       </Schema>
@@ -39,7 +39,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="masterModel1StoreContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="masterModel1StoreContainer" CdmEntityContainer="masterEntities1">
           <EntitySetMapping Name="todolist">
             <EntityTypeMapping TypeName="masterModel1.todolist">
               <MappingFragment StoreEntitySet="todolist">

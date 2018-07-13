@@ -2,7 +2,7 @@
 <#@ include file="EF6.Utility.CS.ttinclude"#><#@
  output extension=".cs"#><#
 
-const string inputFile = @"Todolist.edmx";
+const string inputFile = @"todolist.edmx";
 var textTransform = DynamicTextTransformation.Create(this);
 var code = new CodeGenerationTools(this);
 var ef = new MetadataTools(this);
