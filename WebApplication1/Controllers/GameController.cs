@@ -36,7 +36,7 @@ namespace WebApplication1.Controllers
             return View();
         }
 
-        public ActionResult login()
+        public ActionResult Login()
         {
             return View();
         }
@@ -44,34 +44,23 @@ namespace WebApplication1.Controllers
         [HttpPost]
         public ActionResult AuthorRize(WebApplication1.Models.Menber member)
         {
-            using (Models.masterEntities db = new Models.masterEntities()) {
+            using (Models.masterEntities db = new Models.masterEntities())
+            {
                 var user = db.Menber.Where(x => x.Account == member.Account && x.passwd == member.passwd).FirstOrDefault();
                 if (user == null)
                 {
-                    
-                    member.LoginErrorMessage = user + "帳號或密碼錯誤";
-                    return View("login", member);
+
+                    member.LoginErrorMessage = "帳號或密碼錯誤";
+                    return View("Login", member);
                 }
-                else {
+                else
+                {
                     Session["userid"] = member.Account;
                     return RedirectToAction("Home", "Game");
                 }
             }
         }
 
-        public ActionResult TodoList(WebApplication1.Models.todolist todolist)
-        {
-            using (Models.masterEntities1 db = new Models.masterEntities1()) {
-                //List<dolist> todolist1 = new List<dolist>;
-                //var list = db.todolist.Where(x => x.staff == "123");
-                var dolist = db.todolist.SqlQuery("select * from todolist where userid = '123'" ).ToList();                
-                ViewBag.todolist = dolist;
-                ViewBag.count = dolist.Count();
-                return View();
-                
-                
-            }
-               
-        }
+        
     }
 }

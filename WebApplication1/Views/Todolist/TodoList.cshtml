@@ -15,6 +15,7 @@
     
     <table border="1">
         <tr>
+            <td width="150" align="center">會員名稱</td>
             <td width="150" align="center">代辦事項</td>
             <td width="150" align="center">完成狀態</td>
             <td width="150" align="center">刪除</td>
@@ -23,16 +24,19 @@
             foreach (var list1 in ViewBag.todolist)
             {
         <tr>
+            <td>@list1.userid</td>
             <td>@list1.staff</td>
-            @{@list1.statu
-            if (@list1.statu == "0 ")
-            {
-                <td>未完成</td>
-            }
-            else
-            {
-                <td>已完成</td>
-            }
+
+            @{
+
+                if (@list1.statu == "0 ")
+                {
+                    <td>未完成</td>
+                }
+                else
+                {
+                    <td>已完成</td>
+                }
             }
 
             <td>@list1.statu</td>
