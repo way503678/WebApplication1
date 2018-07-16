@@ -157,6 +157,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\GameController.cs" />
+    <Compile Include="Controllers\LoginController.cs" />
     <Compile Include="Controllers\TodolistController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -275,7 +276,7 @@
     <Content Include="Views\Game\No2.cshtml" />
     <Content Include="Views\Game\Home.cshtml" />
     <Content Include="Views\Game\No3.cshtml" />
-    <Content Include="Views\Game\Login.cshtml" />
+    <Content Include="Views\Login\Login.cshtml" />
     <Content Include="Views\Todolist\TodoList.cshtml" />
   </ItemGroup>
   <ItemGroup>
