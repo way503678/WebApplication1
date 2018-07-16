@@ -19,6 +19,7 @@ namespace WebApplication1.Models
         [DisplayName("User ID")]
         [Required(ErrorMessage ="帳號欄位必須輸入")]
         public string Account { get; set; }
+        [DisplayName("Pass Word")]
         [DataType(DataType.Password)]
         [Required(ErrorMessage = "密碼欄位必須輸入")]
         public string passwd { get; set; }
