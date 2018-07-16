@@ -56,6 +56,7 @@ namespace WebApplication1.Controllers
                 else
                 {
                     Session["userid"] = member.Account;
+                    ViewBag.userid = Session["userid"];
                     return RedirectToAction("Home", "Game");
                 }
             }
