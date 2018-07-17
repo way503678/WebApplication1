@@ -1,6 +1,6 @@
 ﻿@model WebApplication1.Models.todolist
 @{
-    
+
     ViewBag.Title = "代辦事項";
     if (Session["userid"] == null)
     {
@@ -8,11 +8,11 @@
     }
 }
 <h2>@ViewBag.Title</h2>
-<h3>@ViewBag.Message</h3>
+@Scripts.Render("~/bundles/jqueryval")
 
 
 <div>
-    
+    <br />
     <table border="1">
         <tr>
             <td width="150" align="center">會員名稱</td>
@@ -20,35 +20,38 @@
             <td width="150" align="center">完成狀態</td>
             <td width="150" align="center">刪除</td>
         </tr>
-        @{  
+        @{
             foreach (var list1 in ViewBag.todolist)
             {
-        <tr>
-            <td>@list1.userid</td>
-            <td>@list1.staff</td>
-
-            @{
-
-                if (@list1.statu == "0 ")
+                if (list1.statu == "0 ")
                 {
-                    <td>未完成</td>
+                    <tr>
+                        <td>@list1.userid</td>
+                        <td>@list1.staff</td>
+                        <td>未完成</td>
+                        @using (Html.BeginForm("Deletestaff", "Todolist", FormMethod.Post))
+                        {
+                            <td align="center"><button value="@list1.staffid" name="button">刪除</button></td>
+                        }
+                    </tr>
                 }
-                else
-                {
-                    <td>已完成</td>
-                }
-            }
-
-            <td align="center"><input type="checkbox" value="@list1.staffid"></td>
-        </tr>
-
             }
         }
-
-
-
-
     </table>
-
+    <br />
+    @using (Html.BeginForm("Addnewstaff", "Todolist", FormMethod.Post))
+    {
+        <Label>新增代辦事項</Label><br />
+        <input type="text" width="1000" name="addnewstaff"><button name="add" onclick="loadXMLDoc()">新增</button>
+    }
 
 </div>
+
+<script>
+    function loadXMLDoc() {
+        var xmlhttp = new XMLHttpRequest();
+        xmlhttp.open("POST", "Todolist/TodoList", true);
+        xmlhttp.send();
+    }
+
+</script>
