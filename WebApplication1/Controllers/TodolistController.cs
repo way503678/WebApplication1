@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
             using (Models.masterEntities1 db = new Models.masterEntities1())
             {
                 var dolist = db.todolist.SqlQuery("select * from todolist where userid = '" + userid + "' and statu = '0'").ToList();
+                
                 ViewBag.todolist = dolist;
                 return View();
 
