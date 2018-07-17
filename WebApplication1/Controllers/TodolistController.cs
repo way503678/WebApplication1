@@ -10,13 +10,13 @@ namespace WebApplication1.Controllers
     {
         // GET: Todolist
 
-        public ActionResult TodoList(WebApplication1.Models.todolist todolist)
+        public ActionResult TodoList()
         {
 
             var userid = Session["userid"].ToString();
             using (Models.masterEntities1 db = new Models.masterEntities1())
             {
-                var dolist = db.todolist.SqlQuery("select * from todolist where userid = '" + userid + "'").ToList();
+                var dolist = db.todolist.SqlQuery("select * from todolist where userid = '" + userid + "' and statu = '0'").ToList();
                 ViewBag.todolist = dolist;
                 return View();
 
@@ -25,7 +25,7 @@ namespace WebApplication1.Controllers
 
         }
         [HttpPost]
-        public ActionResult Deletestaff(WebApplication1.Models.todolist todolist,string button)
+        public ActionResult Deletestaff(string button)
         {            
             var userid = Session["userid"].ToString();
             using (Models.masterEntities1 db = new Models.masterEntities1())
@@ -38,7 +38,7 @@ namespace WebApplication1.Controllers
          }
 
         [HttpPost]
-        public ActionResult Addnewstaff(WebApplication1.Models.todolist todolist, string addnewstaff)
+        public ActionResult Addnewstaff(string addnewstaff)
         {
             Models.todolist todo = new Models.todolist
             {

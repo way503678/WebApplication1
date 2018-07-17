@@ -48,10 +48,15 @@
 </div>
 
 <script>
-    function loadXMLDoc() {
-        var xmlhttp = new XMLHttpRequest();
-        xmlhttp.open("POST", "Todolist/TodoList", true);
-        xmlhttp.send();
+    function loadXMLDoc() {  
+
+        $.ajax({
+            type: "POST",
+            url: "Todolist",
+            data: $('#addnewstaff').val,
+            success: function () { alert("已成功加入") }
+
+        })
     }
 
 </script>
